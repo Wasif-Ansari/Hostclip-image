@@ -30,7 +30,7 @@ export async function GET() {
     console.log("📝 Clip session saved to DB");
 
     // 3. Create a session URL
-    const sessionURL = `http://192.168.1.6:3000/session/${sessionId}`;
+    const sessionURL = `https://clipboard-text-across-devices.vercel.app/session/${sessionId}`;
     console.log("🌐 Session URL:", sessionURL);
 
     // 4. Generate QR code
