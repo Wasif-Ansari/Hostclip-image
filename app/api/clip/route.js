@@ -22,15 +22,18 @@ export async function GET() {
     const sessionId = uuidv4();
     console.log("📌 Generated session ID:", sessionId);
 
-    // 2. Create a new clip document with empty text
+
+    // 2. Create a new clip document with empty text and images array
     await ClipModel.create({
       sessionId,
-      text: "Demo-text" // ✅ Required field - keep it empty for now
+      text: "Demo-text",
+      images: [] // ✅ Required field for images
     });
     console.log("📝 Clip session saved to DB");
 
     // 3. Create a session URL
-    const sessionURL = `https://clipboard-text-across-devices.vercel.app/session/${sessionId}`;
+    // const sessionURL = `https://clipboard-text-across-devices.vercel.app/session/${sessionId}`;
+    const sessionURL = `http://localhost:3000/session/${sessionId}`;
     console.log("🌐 Session URL:", sessionURL);
 
     // 4. Generate QR code
